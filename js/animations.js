@@ -57,6 +57,7 @@ function updateScroll() {
   } else {
     document.querySelector("header").classList.remove("header__scrolled");
   }
+   // Запуск анимации увеличения числа
   let windowBottomPosition = window.scrollY + window.innerHeight;
   let countElementPosition = document.querySelector(
     ".features__clients-count"

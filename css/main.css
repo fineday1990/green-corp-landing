@@ -67,6 +67,7 @@ button {
   background: url(../img/back.png) no-repeat;
   background-position: center;
   background-size: cover;
+  padding-top: 150px;
 }
 
 .about h1 {
