@@ -66,6 +66,7 @@ function updateScroll() {
     initIncreaseNumberAnimation();
   }
 }
+
 window.addEventListener("scroll", updateScroll);
 function addSmoothScroll(anchor) {
   anchor.addEventListener("click", function (e) {
@@ -75,7 +76,22 @@ function addSmoothScroll(anchor) {
     });
   });
 }
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  addSmoothScroll(anchor);
-});
-addSmoothScroll(document.querySelector(".more-button"));
+
+// плавное перемещение по ссылке <a></a>
+function addSmoothScroll(anchor) {
+	anchor.addEventListener('click', function (e) {
+	  e.preventDefault();
+	  document.querySelector(this.getAttribute('href')).scrollIntoView({
+		 behavior: 'smooth'
+	  });
+	});
+ }
+  
+ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+	addSmoothScroll(anchor);
+ });
+
+// плавное перемещение с "Узнать подробнее"
+ addSmoothScroll(document.querySelector('.more-button')); 
+// плавное перемещение с "Заказать"
+ addSmoothScroll(document.querySelector('.more-button2'));
